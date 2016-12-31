@@ -1,4 +1,4 @@
-NODE JS TUTORIAL FOR BEGINNERS
+NODE JS TUTORIAL FOR BEGINNERS - TheNetNinja
 https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
 
 01.Introduction: {
@@ -48,5 +48,27 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	add file "app.js", run: node "app"
 	
 }
-
-03
+03.The V8 Engine: {
+	- JavaScript Engines: {
+		+ Computers do NOT understand JavaScript.
+		+ A JavaScript engine takes JavaScript, and converts it into
+		something it does understand - machine code
+	}
+	- Machine Code: {
+		+ Javascript
+		+ C++
+		+ Assembly Language
+		+ Machine Code
+	}
+	- So... {
+		+ Node.js is written in C++
+		+ At the heart of Node.js is the V8 engine
+			https://developer.google.com/v8
+		+ The V8 engine converts our JS into machine code
+	}
+	- Node.js with V8: {
+		+ JavaScript
+			--> C++ Node.js V8
+	}			--> Machine Code
+}
+04.
