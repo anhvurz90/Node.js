@@ -71,4 +71,37 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 			--> C++ Node.js V8
 	}			--> Machine Code
 }
-04.
+04.The Global Object {
+	- JavaScript on browser: The Global Object is window.
+	- Node.Js: The Global Object provide some ready functions:
+		clearImmediate, console, exports, global, module...
+		https://nodejs.org/api/globals.html
+	
+	- app.js: {
+		+ console.log(""hey ninjas);
+		
+		+ setTimeout(function(){
+			console.log("3 seconds have passed");
+		},3000);
+		
+		+ var time = 0;
+		setInterval(function() {
+			time += 2;
+			console.log(time  + " seconds have passed");
+		}, 2000);
+		
+		+ var time1 = 0;
+		var timer = setInterval(function() {
+			time1 += 3;
+			console.log(time1 + " seconds have passed...");
+			if (time1 > 10) {
+				clearInterval(timer);
+			}
+		}, 2000);
+		
+		+ console.log(__dirname);
+		+ console.log(__filename);
+	}
+	
+}
+05.
