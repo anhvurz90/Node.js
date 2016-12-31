@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	}
 	- Editor {
 		+ ATOM
-			UI Theme: Nonokai Tweaked
+			UI Theme: Monokai Tweaked
 			Syntax Theme: Atom Monokai
 	}
 	- Github: https://github.com/iamshaunjp/node-js-playlist
@@ -37,3 +37,16 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		+ A tiny bit about the command line
 	}
 }
+02.Installing Node JS: {
+	https://nodejs.org/en
+	node -v
+	
+	Atom - File - Settings - Install - packages - "platformio-ide-terminal"
+	
+	clone github repo from 01: "iamshaunjp/node-js-playlist"
+	open by Atom
+	add file "app.js", run: node "app"
+	
+}
+
+03
