@@ -104,4 +104,27 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	}
 	
 }
-05.
+05.Function Expressions {
+	- Normal function statement {
+		function sayHi() {
+			console.log("hi");
+		}
+		sayHi();
+	}
+	
+	- Function expression: {
+		var sayBye = function() {
+			console.log("bye");
+		}
+		sayBye();
+	}
+	
+	- Pass function as parameter: {
+		function callFunction(fun) {
+			fun();
+		}
+		
+		callFunction(sayBye);
+	}
+}
+06.
