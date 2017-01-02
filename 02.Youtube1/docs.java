@@ -210,3 +210,21 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		ryu.emit("speak", "I want a curry");
 	}
 }
+09.Reading & Writing Files(fs) {
+	- Sync approach: {
+		var fs = require("fs");
+	
+		var readMe = fs.readFileSync("readMe.txt", "utf8");
+		console.log(readMe);
+	
+		fs.writeFileSync("writeMe.txt", readMe);
+	}
+	- Async approach: {
+		var fs = require("fs");
+		fs.readFile("readMe.txt", "utf8", function(err, data) {
+			console.log(data);
+			fs.writeFile("writeMe.txt", data);
+		});
+		console.log("Test");
+	}
+}
