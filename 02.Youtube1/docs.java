@@ -127,4 +127,16 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		callFunction(sayBye);
 	}
 }
-06.
+06.Modules and require() {
+	- count.js: {
+		var counter = function(arr) {
+			return "There are " + arr.length + " elements in this array";
+		};
+		module.exports = counter;
+	}
+	- app.js: {
+		var counter1 = require("./count"); //count.js
+		console.log(counter1([1, 2, 3, 4, 'x']);
+	}
+}
+07.
