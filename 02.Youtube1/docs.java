@@ -139,4 +139,39 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		console.log(counter1([1, 2, 3, 4, 'x']);
 	}
 }
-07.
+07.Module Patterns {
+	- stuff.js: {
+		var counter = function(arr) {
+			return "There are " + arr.length + " elements in this array.";
+		};
+		
+		var adder = function(a, b) {
+			return `The sum of the 2 numbers ${a} and ${b} is ${a + b}`;
+		};
+		
+		var pi = 3.14;
+		
+		module.exports.counter = counter;
+		module.exports.adder = adder;
+		module.exports.pi = pi;
+		
+		//or:
+		
+		module.exports = {
+			counter: counter,
+			adder: adder,
+			pi: pi
+		};
+	}
+	
+	- app.js: {
+		var stuff = require("./stuff");
+		
+		console.log(stuff.counter([ 1, 2, 3]));
+		console.log(stuff.adder(5, 6));
+		console.log(stuff.adder(stuff.pi, 5));
+	}
+	
+	
+}
+08.
