@@ -228,3 +228,27 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		console.log("Test");
 	}
 }
+10.Creating & Removing Directories {
+	- Sync approach: {
+		var fs = require("fs");
+	
+		fs.unlink("writeMe.txt");
+		fs.mkdirSync("stuff");
+		fs.rmdirSync("stuff"); 
+	}
+	- Async approach: {
+		var fs = require("fs");
+		
+		fs.mkdir("stuff", function() {
+			fs.readFile("readMe.txt", "utf8", function(err, data) {
+				fs.writeFile("./stuff/writeMe.txt", data);
+			});
+		});
+	}
+	- Remove directory: {
+		fs.unlink("./stuff/writeMe.txt", function() {
+			fs.rmdir("stuff");
+		});
+	}
+}
+11.
