@@ -171,7 +171,42 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		console.log(stuff.adder(5, 6));
 		console.log(stuff.adder(stuff.pi, 5));
 	}
-	
-	
 }
-08.
+08.The Node Event Emitter {
+	- app.js: {
+		var events = require("events");
+		
+		var myEmitter = new events.EventEmitter();
+		
+		myEmitter.on("someEvent", function(msg) {
+			console.log(msg);
+		});
+		
+		myEmitter .emit("someEvent", "The event was emitted");
+	}
+	- app1.js {
+		var events = require('events');
+		var util = require('util');
+		
+		var Person = function(name) {
+			this.name = name;
+		};
+		
+		util.inherits(Person, events.EventEmitter);
+		
+		var james = new Person("james");
+		var mary = new Person("mary");
+		var ryu = new Person("ryu");
+		
+		var people = [james, mary, ryu];
+		
+		people.forEach(function(person)) {
+			person.on("speak", function(msg) {
+				console.log(person.name + " said: " + msg);
+			});
+		});
+		
+		james.emit("speak", "hey dudes");
+		ryu.emit("speak", "I want a curry");
+	}
+}
