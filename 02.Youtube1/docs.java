@@ -251,4 +251,18 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		});
 	}
 }
-11.
+11.Clients and Servers {
+	- Client<---(req, res)---> Server
+	- Protocols: {
+		A set of communication rules, that two sides agree to use when communicating
+		(language)
+	}
+	- Client:Ips<---Socket--->Server:Ips
+			    (Channel)
+	- TCP: packets sent along the socket
+	- Ports: {
+		A program running on a computer can listen for requests sent to a particular port number,
+		E.g. 172.24.86.76:3000
+	}
+}
+12.
