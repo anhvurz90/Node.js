@@ -266,6 +266,14 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	}
 }
 12.Creating a Server {
+	- Response Header: {
+		Client --Request(req + req headers)-->Server
+		Client <--Response(res data + res headers)-- Server
+		Response Headers: {
+			- Content-Type
+			- Status
+		}
+	}
 	- app.js: {
 		var http = require("http");
 		var server = http.createServer(function(req, res) {
