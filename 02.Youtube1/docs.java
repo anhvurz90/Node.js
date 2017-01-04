@@ -285,3 +285,16 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		console.log("yo dawgs, now listening to port 3000");
 	}
 }
+13.Streams and Buffers {
+	- Node.js Candy Mountain
+	- Buffer: {
+		+ Temporary storage spot for a chunk of data that is being transferred
+			from one place to another.
+		+ The buffer is filled with data, then passed along.
+		+ Transfer small chunks of data at a time.
+	}
+	- Streams in Node.js: {
+		+ Can create streams in Node.js to transfer data.
+		+ Increase performance.
+	}
+}
