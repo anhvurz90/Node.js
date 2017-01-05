@@ -298,3 +298,18 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		+ Increase performance.
 	}
 }
+14.Readable Streams {
+	- Streams: {
+		+ Writable streams - allow node js to write data to a stream
+		+ Readable streams - allow node js to read data from a stream
+		+ Duplex - can read and write to a stream
+	}
+	- Readable Streams: {
+		var fs = require("fs");		
+		var myReadStream = fs.createReadStream(__dirname + "/readMe.txt", "utf8");
+		
+		myReadStream.on("data", function(chunk) {
+			console.log("New chunk received:\n" + chunk);
+		});
+	}
+}
