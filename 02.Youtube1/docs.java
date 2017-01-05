@@ -313,3 +313,11 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		});
 	}
 }
+15.Writable Streams {
+	var myWriteStream = fs.createWriteStream("writeMe.txt");
+	
+	myReadStream.on("data", function(chunk) {
+		console.log("New chunk received: " + chunk);
+		myWriteStream.write(chunk);
+	});
+}
