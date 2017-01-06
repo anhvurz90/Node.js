@@ -321,3 +321,20 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		myWriteStream.write(chunk);
 	});
 }
+16.Pipes {
+	{ myReadStream.pipe(myWriteStream); }
+	or {
+		var http = require("http");
+		var fs = require("fs");
+		
+		var server = http.createServer(function(req, res) {
+			console.log("request was made: " + req.url);
+			res.writeHead(200, {"Content-Type": "text/plain"});
+			var myReadStream = fs.createReadStream("readMe.txt", "utf-8");
+			myReadStream.pipe(res);
+		});
+		
+		server.listen(3000, "127.0.0.1");
+		console.log("yo dawgs, now listening to port 3000");
+	}
+}
