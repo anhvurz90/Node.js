@@ -346,3 +346,13 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		myReadStream.pipe(res);
 	}
 }
+18.Serving JSON data: {
+	- app.js: {
+		var myObj = {
+			name: "Ryu",
+			job: "Ninja",
+			age: 29
+		};
+		res.end(JSON.stringify(myObj));
+	}
+}
