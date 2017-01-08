@@ -375,6 +375,7 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 			} else {
 				res.writeHead(404, {"Content-Type": "text/html"});
 				fs.createReadStream(__dirname + "/404.html").pipe(res);
+			}
 		});
 	}
 }
@@ -382,4 +383,11 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- website: https://npmjs.com
 	- npm init
 	- npm install express
+}
+21.The 'package.json' file: {
+	- npm init -> generates package.json.
+	- package.json: keeps track which packages our app depends on.
+	- npm install express -save -> save package dependencies into package.json
+	- npm uninstall express -> remove express from node_modules but still keep it in package.json
+	- npm install -> install all package dependencies listed in package.json.
 }
