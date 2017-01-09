@@ -396,3 +396,23 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- npm install -g nodemon
 	- nodemon app.js
 }
+23.Express {
+	https://www.youtube.com/watch?v=9TSBKO59u0Y&index=23&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
+	
+	npm install -save express
+	- app23.js: {
+		var express = require("express");
+		var app = express();
+		
+		app.get("/", function(req, res) {
+			res.send("This is the homepage");
+		});
+	
+		app.get("/contact", function(req, res) {
+			res.send("This is the contact page");
+		});
+	
+		app.listen(3000);
+	}
+	nodemon app
+}
