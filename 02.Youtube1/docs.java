@@ -391,3 +391,8 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- npm uninstall express -> remove express from node_modules but still keep it in package.json
 	- npm install -> install all package dependencies listed in package.json.
 }
+22.Installing Nodemon {//hot reload app
+	- npmjs.com -> search nodemon
+	- npm install -g nodemon
+	- nodemon app.js
+}
