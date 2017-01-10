@@ -398,6 +398,22 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 }
 23.Express {
 	https://www.youtube.com/watch?v=9TSBKO59u0Y&index=23&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
+	- Express: {
+		+ Easy and flexible routing system
+		+ Integrates with many templating engines
+		+ Contains a middleware framework
+	}
+	- HTTP Methods: {
+		+ GET
+		+ POST
+		+ DELETE
+		+ PUT
+	}
+	- Responding to Requests: {
+		+ GET: - app.get('route', fn);
+		+ POST: - app.post('route', fn);
+		+ DELETE: - app.delete('route', fn);
+	}
 	
 	npm install -save express
 	- app23.js: {
