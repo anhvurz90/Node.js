@@ -433,7 +433,20 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	nodemon app
 }
 24.Route Parameters: {
-	- app.get("/profile/:id", function(req, res) {
-		res.send("You requested to see a profile with the id of " + req.params.id);
+	- app.get("/profile/:name", function(req, res) {
+		res.send("You requested to see a profile with the name of " + req.params.name);
 	});
+}
+25.Templating Engines: {
+	- res.sendFile({{HTMl file}}): {
+		+ get('/') -> res.sendFile(__dirname + "/index.html");
+		+ get("/contact") -> res.sendFile(__dirname + "/contact.html");
+	}	
+	- http://embeddedjs.com      //EJS
+	- npm install ejs -save
+	- app.set("view engine", "ejs");
+	- create: views\profile.ejs {
+		<%= person %>
+	}
+	- res.render("profile", {persion: req.params.name});
 }
