@@ -445,8 +445,28 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- http://embeddedjs.com      //EJS
 	- npm install ejs -save
 	- app.set("view engine", "ejs");
-	- create: views\profile.ejs {
+	- create: views\profile.ejs { // copy mostly from index.html
 		<%= person %>
 	}
-	- res.render("profile", {persion: req.params.name});
+	- res.render("profile", {person: req.param.name});
+}
+26.Template Engines (part 2) {
+	- app.js: {
+		var data = {age: 29, job: "ninja", hobbies: ['eating', 'fighting', 'fishing']};
+		res.render("profile", {person: req.params.name, data: data});
+	}
+	- view/profile.ejs: {
+		<style>
+			h2 {font-size: 30px;}
+			li {font-size: 16px;}
+		</style>
+		
+		<h2>
+			<ul>
+				<%data.hobbies.forEach(function(item){ %>
+					<li><%= item%></li>
+				<%	});	%>
+			</ul>
+		</h2>
+	}
 }
