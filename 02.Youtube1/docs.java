@@ -475,8 +475,8 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- create 'views/partials/nav.ejs': {
 		<nav>
 			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">Contact</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</nav>
 	}
