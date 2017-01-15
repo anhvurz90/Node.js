@@ -489,5 +489,22 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- 'views/contact.ejs': { //copy from contact.html
 		+ <% include partials/nav.ejs %>
 	}
- 
+}
+28.MIddleware & Static Files {
+	- 'view/index.ejs': {
+		move css into 'assets/style.css':
+		<head>
+			<link href="/assets/styles.css" rel="stylesheet" type="text/css"/>
+		</head>
+	}
+	- Middleware: the code running between the request & the response (in the middle)
+	- 'app.js': {
+		app.use("/assets", function(req, res, next) {
+			console.log(req.url);
+			next();//if not called, request will be stopped
+		});
+		->
+		app.use("/assets", express.static("assets"));
+		//	this is the route		this is the folder name
+	}
 }
