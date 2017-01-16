@@ -490,7 +490,7 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		+ <% include partials/nav.ejs %>
 	}
 }
-28.MIddleware & Static Files {
+28.Middleware & Static Files {
 	- 'view/index.ejs': {
 		move css into 'assets/style.css':
 		<head>
@@ -506,5 +506,34 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		->
 		app.use("/assets", express.static("assets"));
 		//	this is the route		this is the folder name
+	}
+}
+29.Query Strings: {
+	- examples: {
+		+ mysite.com/blog/news?page=2
+		+ Page = 2
+		+ mysite.com/contact?person=ryu&dept=marketing
+		+ Parse the request, and pull out the data
+	}
+	- localhost:3000/contact?dept=marketing&person=joe
+	- app.js: {
+		app.get("/contact", function(req, res) {
+			console.log(req.query);
+			res.render('contact', {qs: req.query});			
+		});
+	}
+	- contact.ejs: {
+		...
+		<p><%=qs.dept%></p>
+		...
+		<form id="contact-form">
+			<label for="who">Who do you want to contact?</label>
+			<input type="text" name="who" value="<%=qs.person%>">
+			<label for="department">Which department?</label>
+			<input type="text" name="department" value="<%=qs.dept%>">
+			<label for="email">Your email</label>
+			<input type="text" name="email"/>
+			<input type="submit" value="submit"/>
+		</form>
 	}
 }
