@@ -537,3 +537,42 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		</form>
 	}
 }
+30.Handling POST Requests: {
+	- POST Requests: {
+		+ POST is a request method
+		+ POST requests, ask the server to accept/store data which is
+			enclosed in the body of the request
+		+ Often used when submitting forms
+	}
+	- contact.ejs: {
+		<form id="contact-form" method="POST" action="/contact">
+			
+		</form>
+	}
+	- body-parser: {
+		+ https://www.npmjs.com/package/body-parser
+		+ npm install body-parser
+		+ Parse incoming request bodies in a middleware before your handlers, 
+		available under the req.body property.
+	}
+	- app.js: {
+		 var body-parser = require("body-parser");
+		 var jsonParse = bodyParser.json();
+		 var urlencodedParser = bodyParser.urlencoded({extended: false});
+		
+		app.post("/contact", urlencodedParser, function(req, res) {
+			console.log(req.body);
+			res.render("contact-success", {data: req.body});			
+		});
+	}
+	- 'view/contact-success.ejs': {
+		<body>
+			<% include partials/nav.ejs %>
+			<h1>Contact Us!</h1>
+			<p>Thanks for getting in touch!</p>
+			<p>You contacted <%= data.who %> in the <%= data.department%> department.</p>
+			<p>We will reply to you at <%= data.email %></p>
+		</body>
+	}
+	- nodemailer: https://www.npmjs.com/package/nodemailer
+}
