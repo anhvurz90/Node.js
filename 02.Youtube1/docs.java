@@ -576,3 +576,15 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	}
 	- nodemailer: https://www.npmjs.com/package/nodemailer
 }
+31.Making a To-do App (part 1): {
+	- node-js-playlist
+	- node-js-playlist/public/assets/: {
+		+ logo.png
+		+ styles.css
+		+ todo-list.js
+	}
+	- npm init --> package.json
+	- npm install express -save
+	- npm install ejs -save
+	- npm install body-parser -save
+}
