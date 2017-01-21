@@ -588,3 +588,46 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	- npm install ejs -save
 	- npm install body-parser -save
 }
+32.Making a To-do App (part 2): {
+	- app32.js: {
+		var express = require("express");
+		var todoController = require("./controllers/todoController");
+		var app = express();
+		
+		//set up template engine
+		app.set("view engine", "ejs");
+		
+		//static files
+		app.use(express.static("./public"));
+		
+		//fire controllers
+		todoController(app);
+		
+		//listen to port
+		app.listen(3000);
+		console.log("You are listening to port 3000");
+	}
+	- MVC {
+		+ CONTROLLER: controls the app sections:
+			* todoController
+			* userController
+		+ MODEL: data:
+			* todos
+			* users
+		+ VIEW: template files (EJS):
+			* todo.ejs
+			* account.ejs
+	}
+	- 'controllers/todoController.js': {
+		module.exports = function(app) {
+			app.get("/todo", function(req, res) {
+			});
+			
+			app.post("/todo", function(req, res) {				
+			});
+			
+			app.delete("/todo", function(req, res) {
+			});
+		};
+	}
+}
