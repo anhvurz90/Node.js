@@ -661,3 +661,37 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		}
 	}
 }
+34.Making a To-do App (part 4): {
+	- 'controllers/todoController.js': {
+		var bodyParser = require("body-parser");
+		var urlencodedParser = bodyParser.urlencoded({extended: false});
+		
+		var data = [{item: 'get milk'}, {item: 'walk dog'}, {item: 'kick some coding ass'}];
+		
+		app.get("/todo", function(req, res) {
+			res.render("todo", {todos: data});
+		});
+		
+		app.post("/todo", urlencodedParser, function(req, res) {
+			data.push(req.body);
+			res.json(data);
+		});
+		
+		app.delete("/todo/:item", function(req, res) {
+			data = data.filter(function(todo) {
+				return todo.item.replace(/ /g, '-') != req.params.item;
+			});
+			
+			res.json(data);
+		});
+	}
+	- 'views/todo.ejs': {
+		+ Make sure you add a reference to the 'todo-list.js' file (in the 'assets' folder) 
+		to the head of this file, for the AJAX requests to work :)
+		<ul>
+			<% for(var i = 0; i < todos.length; i++){ %>
+				<li><%= todos[i].item %></li>
+			<% } %>
+		</ul>
+	}
+}
