@@ -631,3 +631,33 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		};
 	}
 }
+33.Making a To-do App (part 3): {
+	- 'views/todo.ejs': {
+		<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+		<link href="/assests/styles.css" rel="stylesheet" type="text/css"/>
+		
+		
+		<h1>My Todo List</h1>
+		<div id="todo-table">
+			<form>
+				<input type="text" name="item" placeholder="Add new item..." required/>
+				<button type="submit">Add Item</button>
+			</form>
+			<ul>
+				<li>Item 1</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</ul>
+		</div>
+	}
+	- 'controllers/todoController.js': {
+		app.get("/todo", function(req, res) {
+			res.render("todo");
+		});
+	}
+	- 'public/assets/styles.css': {
+		h1 {
+			background: url(/assets/logo.png) no-repeat center;
+		}
+	}
+}
