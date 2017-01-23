@@ -695,3 +695,21 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		</ul>
 	}
 }
+35.Intro to NoSQL / MongoDB: {
+	- NoSQL Databases: {
+		+ Alternative to SQL databases
+		+ Store documents (JSON) in a db, instead of tables with rows and columns
+		+ Works really well with JavaScript (and therefore Node.JS)
+	}
+	- Storing JSON: {
+		[ {item: 'walk the dog'},
+		   {item: 'eat some pie'} ]
+	}
+	- https://mlab.com/ {
+		+ Is a database-as-a-Service for MongoDB
+		+ Regiser account
+	}
+	- https://www.npmjs.com/package/mongoose {
+		+ Is a MongoDB object modeling tool designed to work in an asynchronous environment.
+	}
+}
