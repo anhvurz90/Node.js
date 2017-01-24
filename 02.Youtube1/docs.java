@@ -713,3 +713,26 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		+ Is a MongoDB object modeling tool designed to work in an asynchronous environment.
 	}
 }
+36.Making a To-do App (part 5): {
+	- npm install mongoose -save
+	- todoController.js: {
+		var mongoose = require("mongoose");
+		
+		//Connect to the database
+		mongoose.connect("mongodb://test:test@ds017195.mlab.com:17195/todo");
+	}
+	- mlab.com/create
+		+ Region, 
+		+ Single-node, Sandbox
+		+ Database name: todo
+		+ Create new MongoDB deployment
+			-> mlab.com/home/newDatabase=1
+		+ mlab.com/databases/todo: {
+			* To connect using the mongo shell:
+				%mongo ds017195.mlab.com:/17195/todo -u <dbuser> -p <dbpassword>
+			* To connect using a driver via the standard MongoDB URI:
+				mongodb://<dbuser>:<dbpassword>@ds017195.mlab.com:17195/todo
+			* Add database user: test-test
+			  
+		}
+}
