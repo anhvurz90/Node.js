@@ -752,3 +752,44 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 	}
 	- nodemon app
 }
+37.Making a To-do App (part 6): {
+	- todoController.js: {
+		// var data = [{item: 'get milk'}, {item: 'walk dog'}, {item: 'kick some coding ass'}];
+		// var itemOne = ...
+		
+		app.get('/todo', function(req, res) {
+			//get data from mongodb and pass it to view
+			Todo.find({}, function(err, data) {
+				if (err) throw err;
+				res.render("todo", {todos: data});
+			});
+		});
+		
+		app.post('/todo', urlencodedParser, function(req, res) {
+			//get data from the view and add it to mongodb
+			var newTodo = Todo(req.body)
+				.save(function(err, data) {
+					if (err) throw err;
+					res.json(data);
+				});
+			
+			
+		});
+		
+		app.delete("/todo/:item", function(req, res) {
+			//delete the requested item from mongodb
+			Todo.find({item: req.params.item.replace(/\-/g, " ")})
+				.remove(function(err, data) {
+					if (err) throw err;
+					res.json(data);
+				});
+		});
+	}
+	- nodemon app
+	- Future Node.JS Tutorials: {
+		+ MongoDB
+		+ MEAN stack app (MongoDB, Express, Angular, Node)
+		+ Unit testing with Mocha
+		+ Websockets
+	}
+}
