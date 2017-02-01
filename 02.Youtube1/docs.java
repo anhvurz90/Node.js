@@ -705,11 +705,13 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		[ {item: 'walk the dog'},
 		   {item: 'eat some pie'} ]
 	}
-	- https://mlab.com/ {
+	- https://mlab.com/ 
+	{
 		+ Is a database-as-a-Service for MongoDB
 		+ Regiser account
 	}
-	- https://www.npmjs.com/package/mongoose {
+	- https://www.npmjs.com/package/mongoose 
+	{
 		+ Is a MongoDB object modeling tool designed to work in an asynchronous environment.
 	}
 }
@@ -720,8 +722,20 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 		
 		//Connect to the database
 		mongoose.connect("mongodb://test:test@ds017195.mlab.com:17195/todo");
+		
+		//Create a schema - this is like a blueprint
+		var todoSchema = new mongoose.Schema({
+			item: String
+		});
+		
+		var Todo = mongoose.model('Todo', todoSchema);//model
+		var itemOne = Todo({item: "buy flower"})
+			.save(function(err) {
+				if (err) thow err;
+				cosole.log("item saved");
+			});
 	}
-	- mlab.com/create
+	- mlab.com/create {
 		+ Region, 
 		+ Single-node, Sandbox
 		+ Database name: todo
@@ -735,4 +749,6 @@ https://www.youtube.com/watch?v=w-7RQ46RgxU&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4b
 			* Add database user: test-test
 			  
 		}
+	}
+	- nodemon app
 }
